@@ -1,0 +1,321 @@
+src\js\api\academicRecordsApi.js: import { getProfile } from './profileApi.js'
+src\js\api\academicRecordsApi.js: import { listSemesters } from './semestersApi.js'
+src\js\api\academicRecordsApi.js: import { listSubjects } from './subjectsApi.js'
+src\js\api\academicRecordsApi.js: export async function loadAcademicRecords() {
+src\js\api\academicRecordsApi.test.js: import { beforeEach, describe, expect, it, vi } from 'vitest'
+src\js\api\academicRecordsApi.test.js: import { getProfile } from './profileApi.js'
+src\js\api\academicRecordsApi.test.js: import { listSemesters } from './semestersApi.js'
+src\js\api\academicRecordsApi.test.js: import { listSubjects } from './subjectsApi.js'
+src\js\api\academicRecordsApi.test.js: import { loadAcademicRecords } from './academicRecordsApi.js'
+src\js\api\accountDataApi.js: import { supabase } from '../supabase.js'
+src\js\api\accountDataApi.js: export async function clearGradiData() {
+src\js\api\assessmentCategoriesApi.js: import { supabase } from '../supabase.js'
+src\js\api\assessmentCategoriesApi.js: export async function createAssessmentCategory(values) {
+src\js\api\assessmentCategoriesApi.js: export async function updateAssessmentCategory(id, values) {
+src\js\api\assessmentCategoriesApi.js: export async function deleteAssessmentCategory(id) {
+src\js\api\assessmentsApi.js: import { supabase } from '../supabase.js'
+src\js\api\assessmentsApi.js: export async function createAssessment(values) {
+src\js\api\assessmentsApi.js: export async function updateAssessment(id, values) {
+src\js\api\assessmentsApi.js: export async function upsertAssessment(values) {
+src\js\api\assessmentsApi.js: export async function deleteAssessment(id) {
+src\js\api\finalGradesApi.js: import { supabase } from '../supabase.js'
+src\js\api\finalGradesApi.js: export async function saveFinalGrade(subjectId, values) {
+src\js\api\gradingProfilesApi.js: import { supabase } from '../supabase.js'
+src\js\api\gradingProfilesApi.js: export async function listGradingProfiles() {
+src\js\api\gradingProfilesApi.js: export async function getGradingProfile(id) {
+src\js\api\gradingProfilesApi.js: export async function setDefaultGradingProfile(id) {
+src\js\api\gradingProfilesApi.js: export async function getDefaultGradingProfile() {
+src\js\api\gradingRulesApi.js: import { supabase } from '../supabase.js'
+src\js\api\gradingRulesApi.js: export async function createGradingRule(values) {
+src\js\api\gradingRulesApi.js: export async function updateGradingRule(id, values) {
+src\js\api\gradingRulesApi.js: export async function deleteGradingRule(id) {
+src\js\api\profileApi.js: import { supabase } from '../supabase.js'
+src\js\api\profileApi.js: export async function getProfile() {
+src\js\api\profileApi.js: export async function updateProfile(values) {
+src\js\api\semestersApi.js: import { supabase } from '../supabase.js'
+src\js\api\semestersApi.js: import { session } from '../state/session.js'
+src\js\api\semestersApi.js: import { getProfile } from './profileApi.js'
+src\js\api\semestersApi.js: export async function listSemesters() {
+src\js\api\semestersApi.js: export async function getSemesterContext() {
+src\js\api\semestersApi.js: export async function createSemester(values) {
+src\js\api\semestersApi.js: export async function updateSemester(id, values) {
+src\js\api\semestersApi.js: export async function setActiveSemester(id) {
+src\js\api\semestersApi.js: export async function archiveSemester(id) {
+src\js\api\semestersApi.js: export async function deleteSemester(id) {
+src\js\api\subjectsApi.js: import { supabase } from '../supabase.js'
+src\js\api\subjectsApi.js: export async function listSubjects(semesterId) {
+src\js\api\subjectsApi.js: export async function getSubject(id) {
+src\js\api\subjectsApi.js: export async function createSubject(values) {
+src\js\api\subjectsApi.js: export async function updateSubject(id, values) {
+src\js\api\subjectsApi.js: export async function deleteSubject(id) {
+src\js\auth\auth.js: import { supabase } from '../supabase.js'
+src\js\auth\auth.js: import { session } from '../state/session.js'
+src\js\auth\auth.js: export async function getSession() {
+src\js\auth\auth.js: export function watchAuthState(onRecovery) {
+src\js\auth\auth.js: export async function signIn(email, password) {
+src\js\auth\auth.js: export async function signUp(email, password, fullName) {
+src\js\auth\auth.js: export async function resetPassword(email) {
+src\js\auth\auth.js: export async function updatePassword(password) {
+src\js\auth\auth.js: export async function signOut() {
+src\js\auth\auth.js: export function authErrorMessage(error, context = 'general') {
+src\js\auth\auth.test.js: import { describe, expect, it } from 'vitest'
+src\js\auth\auth.test.js: import { authErrorMessage } from './auth.js'
+src\js\auth\auth.test.js: import { validatePassword } from '../utils/validate.js'
+src\js\components\finalGradePanel.js: import { h } from '../utils/dom.js'
+src\js\components\finalGradePanel.js: import { getDefaultGradingProfile, getGradingProfile } from '../api/gradingProfilesApi.js'
+src\js\components\finalGradePanel.js: import { createGradingRule, updateGradingRule, deleteGradingRule } from '../api/gradingRulesApi.js'
+src\js\components\finalGradePanel.js: import { saveFinalGrade } from '../api/finalGradesApi.js'
+src\js\components\finalGradePanel.js: import { convertPercentToGrade } from '../services/gradeCalculator.js'
+src\js\components\finalGradePanel.js: import { inspectGradingRules, VALID_GRADES, validateNumericGrade } from '../services/gradingRules.js'
+src\js\components\finalGradePanel.js: import { formatGrade, formatPercent, formatNumber } from '../utils/format.js'
+src\js\components\finalGradePanel.js: import { validateRequired } from '../utils/validate.js'
+src\js\components\finalGradePanel.js: import { toast } from './notifications.js'
+src\js\components\finalGradePanel.js: import { openModal, confirmDialog } from './modal.js'
+src\js\components\finalGradePanel.js: import { dataErrorMessage } from '../utils/apiError.js'
+src\js\components\finalGradePanel.js: export function createGradingRulesEditor(profile, onSaved) {
+src\js\components\finalGradePanel.js: export function createFinalGradePanel(subject, result, onSaved) {
+src\js\components\modal.js: import { h } from '../utils/dom.js'
+src\js\components\modal.js: export function openModal(title, content, onClose) {
+src\js\components\modal.js: export function confirmDialog({ title = 'Confirm action', message = 'Are you sure?', confirmText = 'Confirm', cancelText = 'Cancel', danger = false } = {}) {
+src\js\components\notifications.js: import { h } from '../utils/dom.js'
+src\js\components\notifications.js: export function toast(message, type = 'success') {
+src\js\components\notifications.js: export function showLoading(container) {
+src\js\components\sidebar.js: import { h } from '../utils/dom.js'
+src\js\components\sidebar.js: import { authErrorMessage, signOut } from '../auth/auth.js'
+src\js\components\sidebar.js: import { toast } from './notifications.js'
+src\js\components\sidebar.js: import { getSemesterContext } from '../api/semestersApi.js'
+src\js\components\sidebar.js: import { updateProfile } from '../api/profileApi.js'
+src\js\components\sidebar.js: import { session } from '../state/session.js'
+src\js\components\sidebar.js: export function closeMobileDrawer(restoreFocus = true) {
+src\js\components\sidebar.js: export function sidebar() {
+src\js\components\sidebar.js: export function mobileHeader() {
+src\js\components\sidebar.js: export function topBar(title = 'GradeTrack') {
+src\js\components\statCard.js: import { h } from '../utils/dom.js'
+src\js\components\statCard.js: export function metricCard(label, value, detail = '') {
+src\js\components\subjectGradeTools.js: import { h } from '../utils/dom.js'
+src\js\components\subjectGradeTools.js: import { predictFinal, requiredScoreForTarget, computeSubjectGrade } from '../services/gradeCalculator.js'
+src\js\components\subjectGradeTools.js: import { getSemesterContext } from '../api/semestersApi.js'
+src\js\components\subjectGradeTools.js: import { listSubjects } from '../api/subjectsApi.js'
+src\js\components\subjectGradeTools.js: import { formatPercent } from '../utils/format.js'
+src\js\components\subjectGradeTools.js: import { validatePercentage } from '../utils/validate.js'
+src\js\components\subjectGradeTools.js: import { dataErrorMessage } from '../utils/apiError.js'
+src\js\components\subjectGradeTools.js: export function createCalculationPanel(subject, result) {
+src\js\components\subjectGradeTools.js: export function requiredTargetMessage(result) {
+src\js\components\subjectGradeTools.js: export function createPredictorPanel(subject, result) {
+src\js\components\subjectGradeTools.js: export function createStandaloneGradeTool(container, type) {
+src\js\components\subjectGradeTools.test.js: import { describe, expect, it } from 'vitest'
+src\js\components\subjectGradeTools.test.js: import { requiredTargetMessage } from './subjectGradeTools.js'
+src\js\config\assessmentTypes.js: export const assessmentTypes = [
+src\js\config\gradeScales.js: import { VALID_GRADES } from '../services/gradingRules.js'
+src\js\config\gradeScales.js: export const MSU_IIT_NUMERIC_GRADES = VALID_GRADES.map(grade => ({
+src\js\config\routes.js: export const routes = {
+src\js\config\routes.js: export const routeTable = [
+src\js\pages\analytics.js: import { loadAcademicRecords } from '../api/academicRecordsApi.js'
+src\js\pages\analytics.js: import { metricCard } from '../components/statCard.js'
+src\js\pages\analytics.js: import { classifyAssessments } from '../services/assessmentAnalytics.js'
+src\js\pages\analytics.js: import { computeSubjectGrade } from '../services/gradeCalculator.js'
+src\js\pages\analytics.js: import { computeCumulativeGwa, computeGwa } from '../services/gwaCalculator.js'
+src\js\pages\analytics.js: import { dataErrorMessage } from '../utils/apiError.js'
+src\js\pages\analytics.js: import { h } from '../utils/dom.js'
+src\js\pages\analytics.js: import { formatGwa, formatGrade, formatPercent, formatUnits } from '../utils/format.js'
+src\js\pages\analytics.js: export async function render(container) {
+src\js\pages\assessments.js: import { h } from '../utils/dom.js'
+src\js\pages\assessments.js: export async function render(container) {
+src\js\pages\dashboard.js: import { loadAcademicRecords } from '../api/academicRecordsApi.js'
+src\js\pages\dashboard.js: import { metricCard } from '../components/statCard.js'
+src\js\pages\dashboard.js: import { classifyAssessments } from '../services/assessmentAnalytics.js'
+src\js\pages\dashboard.js: import { computeSubjectGrade } from '../services/gradeCalculator.js'
+src\js\pages\dashboard.js: import { computeGwa } from '../services/gwaCalculator.js'
+src\js\pages\dashboard.js: import { sumSubjectUnits } from '../utils/academic.js'
+src\js\pages\dashboard.js: import { dataErrorMessage } from '../utils/apiError.js'
+src\js\pages\dashboard.js: import { h } from '../utils/dom.js'
+src\js\pages\dashboard.js: import { formatDate, formatFinalGrade, formatGwa, formatPercent, formatUnits } from '../utils/format.js'
+src\js\pages\dashboard.js: export async function render(container) {
+src\js\pages\demo.js: import { h } from '../utils/dom.js'
+src\js\pages\demo.js: import { openModal, confirmDialog } from '../components/modal.js'
+src\js\pages\demo.js: import { toast } from '../components/notifications.js'
+src\js\pages\demo.js: export function render(container) {
+src\js\pages\forgotPassword.js: import { h } from '../utils/dom.js'
+src\js\pages\forgotPassword.js: import { resetPassword, authErrorMessage } from '../auth/auth.js'
+src\js\pages\forgotPassword.js: import { validateEmail } from '../utils/validate.js'
+src\js\pages\forgotPassword.js: export function render(container) {
+src\js\pages\gradeCalculator.js: import { createStandaloneGradeTool } from '../components/subjectGradeTools.js'
+src\js\pages\gradeCalculator.js: export function render(container) {
+src\js\pages\gradePredictor.js: import { createStandaloneGradeTool } from '../components/subjectGradeTools.js'
+src\js\pages\gradePredictor.js: export function render(container) {
+src\js\pages\gwaCalculator.js: import { loadAcademicRecords } from '../api/academicRecordsApi.js'
+src\js\pages\gwaCalculator.js: import { saveFinalGrade } from '../api/finalGradesApi.js'
+src\js\pages\gwaCalculator.js: import { updateSubject } from '../api/subjectsApi.js'
+src\js\pages\gwaCalculator.js: import { openModal } from '../components/modal.js'
+src\js\pages\gwaCalculator.js: import { toast } from '../components/notifications.js'
+src\js\pages\gwaCalculator.js: import { metricCard } from '../components/statCard.js'
+src\js\pages\gwaCalculator.js: import { computeCumulativeGwa, computeGwa } from '../services/gwaCalculator.js'
+src\js\pages\gwaCalculator.js: import { VALID_GRADES } from '../services/gradingRules.js'
+src\js\pages\gwaCalculator.js: import { dataErrorMessage } from '../utils/apiError.js'
+src\js\pages\gwaCalculator.js: import { h } from '../utils/dom.js'
+src\js\pages\gwaCalculator.js: import { formatFinalGrade, formatGwa, formatGrade, formatUnits } from '../utils/format.js'
+src\js\pages\gwaCalculator.js: export async function render(container) {
+src\js\pages\history.js: import { loadAcademicRecords } from '../api/academicRecordsApi.js'
+src\js\pages\history.js: import { metricCard } from '../components/statCard.js'
+src\js\pages\history.js: import { computeCumulativeGwa, computeGwa } from '../services/gwaCalculator.js'
+src\js\pages\history.js: import { sumSubjectUnits } from '../utils/academic.js'
+src\js\pages\history.js: import { dataErrorMessage } from '../utils/apiError.js'
+src\js\pages\history.js: import { h } from '../utils/dom.js'
+src\js\pages\history.js: import { formatFinalGrade, formatGwa, formatUnits } from '../utils/format.js'
+src\js\pages\history.js: export async function render(container) {
+src\js\pages\login.js: import { h } from '../utils/dom.js'
+src\js\pages\login.js: import { signIn, authErrorMessage } from '../auth/auth.js'
+src\js\pages\login.js: import { validateEmail, validateRequired } from '../utils/validate.js'
+src\js\pages\login.js: export function render(container) {
+src\js\pages\notFound.js: import { h } from '../utils/dom.js'
+src\js\pages\notFound.js: export function render(container, params = {}) {
+src\js\pages\register.js: import { h } from '../utils/dom.js'
+src\js\pages\register.js: import { signUp, authErrorMessage } from '../auth/auth.js'
+src\js\pages\register.js: import { validateEmail, validateName, validatePassword } from '../utils/validate.js'
+src\js\pages\register.js: export function render(container) {
+src\js\pages\resetPassword.js: import { h } from '../utils/dom.js'
+src\js\pages\resetPassword.js: import { updatePassword, authErrorMessage } from '../auth/auth.js'
+src\js\pages\resetPassword.js: import { session } from '../state/session.js'
+src\js\pages\resetPassword.js: import { validatePassword } from '../utils/validate.js'
+src\js\pages\resetPassword.js: export function render(container) {
+src\js\pages\semesters.js: import { h } from '../utils/dom.js'
+src\js\pages\semesters.js: import {
+src\js\pages\semesters.js: import { validateAcademicYear } from '../utils/validate.js'
+src\js\pages\semesters.js: import { toast } from '../components/notifications.js'
+src\js\pages\semesters.js: import { openModal, confirmDialog } from '../components/modal.js'
+src\js\pages\semesters.js: import { formatDate } from '../utils/format.js'
+src\js\pages\semesters.js: import { dataErrorMessage } from '../utils/apiError.js'
+src\js\pages\semesters.js: export async function render(container) {
+src\js\pages\settings.js: import { clearGradiData } from '../api/accountDataApi.js'
+src\js\pages\settings.js: import { listGradingProfiles, setDefaultGradingProfile } from '../api/gradingProfilesApi.js'
+src\js\pages\settings.js: import { listSemesters, setActiveSemester } from '../api/semestersApi.js'
+src\js\pages\settings.js: import { getProfile, updateProfile } from '../api/profileApi.js'
+src\js\pages\settings.js: import { loadAcademicRecords } from '../api/academicRecordsApi.js'
+src\js\pages\settings.js: import { createGradingRulesEditor } from '../components/finalGradePanel.js'
+src\js\pages\settings.js: import { openModal } from '../components/modal.js'
+src\js\pages\settings.js: import { toast } from '../components/notifications.js'
+src\js\pages\settings.js: import { authErrorMessage, signOut, updatePassword } from '../auth/auth.js'
+src\js\pages\settings.js: import { session } from '../state/session.js'
+src\js\pages\settings.js: import { dataErrorMessage } from '../utils/apiError.js'
+src\js\pages\settings.js: import { h } from '../utils/dom.js'
+src\js\pages\settings.js: export async function render(container) {
+src\js\pages\subjectDetail.js: import { h } from '../utils/dom.js'
+src\js\pages\subjectDetail.js: import { getSubject } from '../api/subjectsApi.js'
+src\js\pages\subjectDetail.js: import {
+src\js\pages\subjectDetail.js: import {
+src\js\pages\subjectDetail.js: import { computeAssessmentPercentage, computeSubjectGrade } from '../services/gradeCalculator.js'
+src\js\pages\subjectDetail.js: import { createCalculationPanel, createPredictorPanel } from '../components/subjectGradeTools.js'
+src\js\pages\subjectDetail.js: import { createFinalGradePanel } from '../components/finalGradePanel.js'
+src\js\pages\subjectDetail.js: import { formatDate, formatPercent, formatNumber } from '../utils/format.js'
+src\js\pages\subjectDetail.js: import { validateAssessmentValues, validateRequired, validateWeight } from '../utils/validate.js'
+src\js\pages\subjectDetail.js: import { toast } from '../components/notifications.js'
+src\js\pages\subjectDetail.js: import { openModal, confirmDialog } from '../components/modal.js'
+src\js\pages\subjectDetail.js: import { dataErrorMessage } from '../utils/apiError.js'
+src\js\pages\subjectDetail.js: export async function render(container, params) {
+src\js\pages\subjects.js: import { h } from '../utils/dom.js'
+src\js\pages\subjects.js: import { listSubjects, createSubject, updateSubject, deleteSubject } from '../api/subjectsApi.js'
+src\js\pages\subjects.js: import { getSemesterContext } from '../api/semestersApi.js'
+src\js\pages\subjects.js: import { toast } from '../components/notifications.js'
+src\js\pages\subjects.js: import { openModal, confirmDialog } from '../components/modal.js'
+src\js\pages\subjects.js: import { validateRequired, validateUnits } from '../utils/validate.js'
+src\js\pages\subjects.js: import { formatGrade, formatPercent, formatUnits } from '../utils/format.js'
+src\js\pages\subjects.js: import { computeSubjectGrade } from '../services/gradeCalculator.js'
+src\js\pages\subjects.js: import { dataErrorMessage } from '../utils/apiError.js'
+src\js\pages\subjects.js: export async function render(container) {
+src\js\services\assessmentAnalytics.js: export function classifyAssessments(assessments = [], now = new Date(), daysAhead = 14) {
+src\js\services\assessmentAnalytics.test.js: import { describe, expect, it } from 'vitest'
+src\js\services\assessmentAnalytics.test.js: import { classifyAssessments } from './assessmentAnalytics.js'
+src\js\services\gradeCalculator.js: export function computeAssessmentPercentage(assessment) {
+src\js\services\gradeCalculator.js: export function computeSubjectGrade(subject, categories = [], assessments = []) {
+src\js\services\gradeCalculator.js: export function predictFinal(subjectResult, hypotheticalScores) {
+src\js\services\gradeCalculator.js: export function requiredScoreForTarget(subjectResult, target) {
+src\js\services\gradeCalculator.js: export function convertPercentToGrade(percent, rules = []) {
+src\js\services\gradeCalculator.js: export function calculateIndividual(assessments) {
+src\js\services\gradeCalculator.js: export function calculateCategory(assessments, categories) {
+src\js\services\gradeCalculator.js: export const assessmentPercentage = computeAssessmentPercentage
+src\js\services\gradeCalculator.test.js: import { describe, expect, it } from 'vitest'
+src\js\services\gradeCalculator.test.js: import {
+src\js\services\gradePredictor.js: import { predictFinal, requiredScoreForTarget } from './gradeCalculator.js'
+src\js\services\gradePredictor.js: export { predictFinal }
+src\js\services\gradePredictor.js: export { requiredScoreForTarget }
+src\js\services\gradePredictor.js: export function predictGrade({ target, earned, remainingWeight, hypotheticalPercent }) {
+src\js\services\gradePredictor.test.js: import { describe, expect, it } from 'vitest'
+src\js\services\gradePredictor.test.js: import { computeSubjectGrade } from './gradeCalculator.js'
+src\js\services\gradePredictor.test.js: import {
+src\js\services\gradingRules.js: export const VALID_GRADES = [1, 1.25, 1.5, 1.75, 2, 2.25, 2.5, 2.75, 3, 4, 5]
+src\js\services\gradingRules.js: export function inspectGradingRules(rules = []) {
+src\js\services\gradingRules.js: export function validateNumericGrade(value) {
+src\js\services\gradingRules.test.js: import { describe, expect, it } from 'vitest'
+src\js\services\gradingRules.test.js: import { inspectGradingRules, validateNumericGrade } from './gradingRules.js'
+src\js\services\gwaCalculator.js: export function computeGwa(subjectsWithGrades = []) {
+src\js\services\gwaCalculator.js: export function computeCumulativeGwa(allSubjectsWithGrades = []) {
+src\js\services\gwaCalculator.js: export function calculateGwa(subjectRows) {
+src\js\services\gwaCalculator.test.js: import { describe, expect, it } from 'vitest'
+src\js\services\gwaCalculator.test.js: import { calculateGwa, computeCumulativeGwa, computeGwa } from './gwaCalculator.js'
+src\js\state\session.js: export const session = {
+src\js\utils\academic.js: export function sumSubjectUnits(subjects) {
+src\js\utils\academic.test.js: import { describe, expect, it } from 'vitest'
+src\js\utils\academic.test.js: import { sumSubjectUnits } from './academic.js'
+src\js\utils\apiError.js: export function dataErrorMessage(error, fallback) {
+src\js\utils\dom.js: export function h(tag, attributes = {}, children = []) {
+src\js\utils\dom.js: export function escapeHtml(value) {
+src\js\utils\dom.test.js: import { afterEach, describe, expect, it, vi } from 'vitest'
+src\js\utils\dom.test.js: import { h } from './dom.js'
+src\js\utils\format.js: export function formatNumber(value, decimals = 2) {
+src\js\utils\format.js: export function formatPercent(value, decimals = 2) {
+src\js\utils\format.js: export function formatGrade(value, decimals = 2) {
+src\js\utils\format.js: export function formatFinalGrade(finalGrade, emptyLabel = '—') {
+src\js\utils\format.js: export function formatUnits(value) {
+src\js\utils\format.js: export function formatDate(value, options = {}) {
+src\js\utils\format.js: export function formatGwa(value, decimals = 2) {
+src\js\utils\format.test.js: import { describe, expect, it } from 'vitest'
+src\js\utils\format.test.js: import { formatFinalGrade, formatGwa } from './format.js'
+src\js\utils\validate.js: export function validateScore(score, totalPoints) {
+src\js\utils\validate.js: export function validateAssessmentValues(values) {
+src\js\utils\validate.js: export function validatePercentage(value) {
+src\js\utils\validate.js: export function validateWeight(value) {
+src\js\utils\validate.js: export function validateUnits(value) {
+src\js\utils\validate.js: export function validateAcademicYear(value) {
+src\js\utils\validate.js: export function isUuid(value) {
+src\js\utils\validate.js: export function validateEmail(value) {
+src\js\utils\validate.js: export function validateRequired(value, label = 'This field') {
+src\js\utils\validate.js: export function validateGrade(value) {
+src\js\utils\validate.js: export function validateName(value) {
+src\js\utils\validate.js: export function validatePassword(value) {
+src\js\utils\validate.test.js: import { describe, expect, it } from 'vitest'
+src\js\utils\validate.test.js: import { validateAssessmentValues } from './validate.js'
+src\js\router.js: import { getSession } from './auth/auth.js'
+src\js\router.js: import { session } from './state/session.js'
+src\js\router.js: import { isUuid } from './utils/validate.js'
+src\js\router.js: export function startRouter({ routeTable, pageMap, container, notFound, onNavigate, onAuthRequired }) {
+src\js\supabase.js: import { createClient } from '@supabase/supabase-js'
+src\js\supabase.js: export const supabase = url && key ? createClient(url, key) : null
+src\counter.js: export function setupCounter(element) {
+src\main.js: import './css/tokens.css'
+src\main.js: import './css/base.css'
+src\main.js: import './css/layout.css'
+src\main.js: import './css/components.css'
+src\main.js: import './css/auth.css'
+src\main.js: import { h } from './js/utils/dom.js'
+src\main.js: import { routeTable } from './js/config/routes.js'
+src\main.js: import { startRouter } from './js/router.js'
+src\main.js: import { closeMobileDrawer, sidebar, topBar } from './js/components/sidebar.js'
+src\main.js: import { toast } from './js/components/notifications.js'
+src\main.js: import { authErrorMessage, watchAuthState } from './js/auth/auth.js'
+src\main.js: import { render as login } from './js/pages/login.js'
+src\main.js: import { render as register } from './js/pages/register.js'
+src\main.js: import { render as forgotPassword } from './js/pages/forgotPassword.js'
+src\main.js: import { render as resetPassword } from './js/pages/resetPassword.js'
+src\main.js: import { render as dashboard } from './js/pages/dashboard.js'
+src\main.js: import { render as semesters } from './js/pages/semesters.js'
+src\main.js: import { render as subjects } from './js/pages/subjects.js'
+src\main.js: import { render as subjectDetail } from './js/pages/subjectDetail.js'
+src\main.js: import { render as assessments } from './js/pages/assessments.js'
+src\main.js: import { render as gradeCalculator } from './js/pages/gradeCalculator.js'
+src\main.js: import { render as gradePredictor } from './js/pages/gradePredictor.js'
+src\main.js: import { render as gwa } from './js/pages/gwaCalculator.js'
+src\main.js: import { render as history } from './js/pages/history.js'
+src\main.js: import { render as analytics } from './js/pages/analytics.js'
+src\main.js: import { render as settings } from './js/pages/settings.js'
+src\main.js: import { render as demo } from './js/pages/demo.js'
+src\main.js: import { render as notFound } from './js/pages/notFound.js'

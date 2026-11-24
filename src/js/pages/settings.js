@@ -291,7 +291,7 @@ export async function render(container) {
       const [records, profiles] = await Promise.all([loadAcademicRecords(), listGradingProfiles()])
       const exportedSubjects = records.subjects.map(({ final_grade, ...subject }) => subject)
       downloadJson({
-        exported_at: new Date().toISOString(),
+        exported_at: new Date(date).toISOString(),
         profile: records.profile,
         semesters: records.semesters,
         subjects: exportedSubjects,
